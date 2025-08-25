@@ -19,8 +19,8 @@ object tom {
     method velocidadMax() = 5 + (energia / 10)
     
     method puedeCazarA_En(raton, distancia) {
-        self.correr(distancia)
-        if (self.metrosRecorridos() < self.energia() and self.ultimoRatonComido() != raton) {
+        self.correr(distancia) // corre distancia a raton
+        if (self.metrosRecorridos() < self.energia() and self.ultimoRatonComido() != raton) { // se ve si los metros recorridos son menor a su energia 
             self.comer(raton)
         }
     }
