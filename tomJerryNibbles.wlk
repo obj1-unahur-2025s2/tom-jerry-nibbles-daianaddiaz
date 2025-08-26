@@ -20,9 +20,25 @@ object tom {
     
     method puedeCazarA_En(raton, distancia) {
         self.correr(distancia) // corre distancia a raton
-        if (self.metrosRecorridos() < self.energia() and self.ultimoRatonComido() != raton) { // se ve si los metros recorridos son menor a su energia 
+        if (metrosRecorridos < energia) { // se ve si los metros recorridos son menor a su energia 
             self.comer(raton)
         }
+    }
+
+    // otra forma
+
+    method puedeCazarALaDistancia(unaDistancia) {
+        return unaDistancia / 2 <= energia
+    }
+    method cazarA_SiPuede(unRaton, unaDistancia) {
+        if (self.puedeCazarALaDistancia(unaDistancia)) {
+            self.cazarA(unRaton, unaDistancia)
+        }
+    }
+    
+    method cazarA(raton, distancia) {
+      self.correr(distancia)
+      self.comer(raton)
     }
 }
 
